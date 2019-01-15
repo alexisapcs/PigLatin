@@ -3,24 +3,32 @@ public void setup()
 {
 	String[] lines = loadStrings("LowellHymn.txt");
 	String currentLine = lines[0];
-	ArrayList<String> words = new ArrayList<String>();
-	ArrayList<String> word = new ArrayList<String>();
-	for (int j = 0 ; j < currentLine.length(); j++) 
-	{
-	  if ( currentLine.charAt(j) != ' ' && currentLine.charAt(j) != ',' ) 
-	  	word.add(currentLine.charAt(j));
-	  else {
-	  	words.add(word);
-	  	word.clear();
-	  }
-
-	}
+  String word = "";
+  String row = "";
 	System.out.println("there are " + lines.length + " lines");
 	for (int i = 0 ; i < lines.length; i++) 
 	{
-	  System.out.println(pigLatin(lines[i]));
+    currentLine = lines[i];
+	  for (int j = 0 ; j < currentLine.length(); j++) {
+      if ( currentLine.charAt(j) != ' ' && currentLine.charAt(j) != ',' && currentLine.charAt(j) != '.' ) 
+        word+=currentLine.charAt(j);
+      else {
+        if ( word != "" ) 
+          row += pigLatin(word);
+        if ( currentLine.charAt(j) == ' ' ) 
+          row += " ";
+        else if ( currentLine.charAt(j) == ',' )
+          row += ",";
+        else if ( currentLine.charAt(j) == '.' )
+          row += ".";
+        word = "";
+      }
+    }
+    System.out.println(row);
+    row = "";
+    //System.out.println(pigLatin(lines[i]));
 	}
-	println(words);
+  
 }
 public void draw() {}
 
