@@ -1,5 +1,4 @@
-public void setup() 
-{
+public void setup() {
 	String[] lines = loadStrings("words.txt");
 	String currentLine = lines[0];
 	String word = "";
@@ -8,21 +7,25 @@ public void setup()
 	for (int i = 0 ; i < lines.length; i++) {
     	currentLine = lines[i];
     	for (int j = 0 ; j < currentLine.length(); j++) {
-    	if ( (currentLine.charAt(j) != ' ' && currentLine.charAt(j) != ',' && currentLine.charAt(j) != '.' ) || something something) 
-    	{
+    	if ( !lines[i].equals(word) && (currentLine.charAt(j) != ' ' && currentLine.charAt(j) != ',' && currentLine.charAt(j) != '.' ) ) {
     		word+=currentLine.charAt(j);
-    		println(word); 
-    	}
-    	else {
-        	if ( word != "" ) 
+    		//println(word); 
+    		//println(!lines[i].equals(word) && (currentLine.charAt(j) != ' ' && currentLine.charAt(j) != ',' && currentLine.charAt(j) != '.' ));
+    	} else {
+        	if ( word != "" ) {
         		row += pigLatin(word);
-        	if ( currentLine.charAt(j) == ' ' ) 
+        	}
+        	if ( currentLine.charAt(j) == ' ' ) {
         		row += " ";
-        	else if ( currentLine.charAt(j) == ',' )
+        	}
+        	else if ( currentLine.charAt(j) == ',' ) {
         		row += ",";
-        	else if ( currentLine.charAt(j) == '.' )
+        	}
+        	else if ( currentLine.charAt(j) == '.' ) {
         		row += ".";
+        	}
         	word = "";
+        	println("it happened");
       	}
     }
     System.out.println(row);
