@@ -9,8 +9,6 @@ public void setup() {
     	for (int j = 0 ; j < currentLine.length(); j++) {
     	if ( !lines[i].equals(word) && (currentLine.charAt(j) != ' ' && currentLine.charAt(j) != ',' && currentLine.charAt(j) != '.' ) ) {
     		word+=currentLine.charAt(j);
-    		//println(word); 
-    		//println(!lines[i].equals(word) && (currentLine.charAt(j) != ' ' && currentLine.charAt(j) != ',' && currentLine.charAt(j) != '.' ));
     	} else {
         	if ( word != "" ) {
         		row += pigLatin(word);
@@ -25,7 +23,6 @@ public void setup() {
         		row += ".";
         	}
         	word = "";
-        	println("it happened");
       	}
     }
     System.out.println(row);

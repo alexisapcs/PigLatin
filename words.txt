@@ -1,8 +1,8 @@
-beast
-dough
-happy
-question
-star
-three
-eagle
-try
+beast 
+dough 
+happy 
+question 
+star 
+three 
+eagle 
+try 
